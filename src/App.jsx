@@ -8,7 +8,11 @@ function App() {
   const handleClick = (value) => {
     if (value === '=') {
       try {
-        setResult(eval(input));
+        if (input.trim() === '') {
+          setResult('Error');
+        } else {
+          setResult(eval(input));
+        }
       } catch (error) {
         setResult('Error');
       }
